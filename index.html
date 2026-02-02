@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tienda WhatsApp</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap">
+    <title>Mi Tienda WhatsApp | Premium</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap">
     <style>
         * {
             margin: 0;
@@ -13,73 +13,80 @@
         }
 
         :root {
-            --primary: #25D366;
-            --secondary: #075E54;
-            --text: #303030;
-            --text-light: #667781;
-            --title: #111B21;
-            --bg: #F0F2F5;
+            --primary: #121212;
+            --primary-light: #2a2a2a;
+            --accent: #b08d57;
+            --accent-light: #d4bc8e;
+            --text: #1a1a1a;
+            --text-light: #757575;
+            --bg: #fdfdfd;
             --white: #FFFFFF;
-            --border: #E9EDEF;
-            --success: #25D366;
-            --shadow: rgba(0, 0, 0, 0.08);
+            --border: #eeeeee;
+            --success: #2d5a4a;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+            --radius: 16px;
         }
 
         body {
-            font-family: 'DM Sans', sans-serif;
+            font-family: 'Outfit', sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.5;
             min-height: 100vh;
         }
 
-        /* Header */
+        /* Header Moderno */
         .header {
-            background: var(--white);
-            border-bottom: 2px solid var(--border);
-            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 1.25rem 0;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 20px var(--shadow);
+            z-index: 1000;
         }
 
         .header-content {
-            max-width: 1400px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 2rem;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.8rem;
+            text-decoration: none;
+            color: inherit;
         }
 
         .logo {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.4rem;
             color: var(--white);
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: transform 0.3s ease;
         }
+
+        .logo-section:hover .logo { transform: rotate(-10deg); }
 
         .store-name {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--title);
-            letter-spacing: -0.5px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.01em;
         }
 
         .header-actions {
@@ -88,557 +95,249 @@
             align-items: center;
         }
 
-        .language-selector {
-            display: flex;
-            gap: 0.25rem;
-            background: var(--bg);
-            padding: 0.25rem;
-            border-radius: 10px;
-            border: 2px solid var(--border);
-        }
-
-        .lang-btn {
-            background: none;
-            border: none;
-            font-size: 0.875rem;
-            font-weight: 700;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            color: var(--text-light);
-            letter-spacing: 0.5px;
-        }
-
-        .lang-btn:hover {
-            background: rgba(37, 211, 102, 0.1);
-            color: var(--primary);
-        }
-
-        .lang-btn.active {
-            background: var(--primary);
-            color: var(--white);
-            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
-        }
-
+        /* Botones Pulidos */
         .btn {
-            padding: 0.75rem 1.5rem;
+            padding: 0.8rem 1.6rem;
             border: none;
-            border-radius: 10px;
+            border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            gap: 0.6rem;
             text-decoration: none;
+            font-family: inherit;
         }
 
         .btn-primary {
             background: var(--primary);
             color: var(--white);
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
         }
 
         .btn-primary:hover {
-            background: #20BD5B;
+            background: var(--accent);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 8px 20px rgba(176, 141, 87, 0.3);
         }
 
         .btn-secondary {
-            background: var(--white);
-            color: var(--secondary);
-            border: 2px solid var(--secondary);
+            background: #f5f5f7;
+            color: var(--text);
         }
 
         .btn-secondary:hover {
-            background: var(--secondary);
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        .btn-sm {
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
+            background: #e5e5e7;
         }
 
         .cart-btn {
             position: relative;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.8rem;
         }
 
         .cart-badge {
             position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--secondary);
+            top: -5px;
+            right: -5px;
+            background: var(--accent);
             color: var(--white);
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
+            min-width: 20px;
+            height: 20px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 700;
+            font-size: 0.7rem;
+            font-weight: 800;
             border: 2px solid var(--white);
+            padding: 0 5px;
         }
 
-        /* Container */
+        /* Contenedores */
         .container {
-            max-width: 1400px;
+            max-width: 1300px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 4rem 1.5rem;
         }
 
-        /* Admin Panel */
+        /* Panel de Administración */
         .admin-panel {
             background: var(--white);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 30px var(--shadow);
-            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
         .admin-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 2rem;
-            color: var(--title);
-            border-bottom: 3px solid var(--primary);
-            padding-bottom: 1rem;
+            font-weight: 800;
+            margin-bottom: 2.5rem;
+            color: var(--primary);
+            text-align: center;
         }
 
         .tabs {
             display: flex;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            border-bottom: 3px solid var(--border);
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding: 0.5rem;
+            background: #f5f5f7;
+            border-radius: 20px;
             overflow-x: auto;
-            position: relative;
-            padding: 0.75rem 0.5rem 0 0.5rem;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            background: var(--bg);
-            border-radius: 12px 12px 0 0;
-        }
-
-        /* Custom scrollbar */
-        .tabs::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .tabs::-webkit-scrollbar-track {
-            background: rgba(0,0,0,0.05);
-            border-radius: 10px;
-            margin: 0 10px;
-        }
-
-        .tabs::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-            transition: background 0.3s ease;
-        }
-
-        .tabs::-webkit-scrollbar-thumb:hover {
-            background: var(--secondary);
+            scrollbar-width: none;
         }
 
         .tab {
-            padding: 0.875rem 1.75rem;
+            padding: 0.8rem 1.5rem;
             background: transparent;
             border: none;
             font-weight: 600;
+            border-radius: 15px;
             cursor: pointer;
-            color: var(--text);
-            border-radius: 10px 10px 0 0;
-            transition: all 0.3s ease;
+            color: var(--text-light);
+            transition: all 0.3s;
             white-space: nowrap;
-            position: relative;
-            flex-shrink: 0;
-            border-bottom: 3px solid transparent;
-        }
-
-        .tab:hover {
-            background: rgba(37, 211, 102, 0.1);
-            color: var(--primary);
-            transform: translateY(-2px);
         }
 
         .tab.active {
             background: var(--white);
             color: var(--primary);
-            border-bottom-color: var(--primary);
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-sm);
         }
 
-        .tab.active::before {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--primary);
-            border-radius: 3px 3px 0 0;
-        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: slideUp 0.5s ease forwards; }
 
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Form Groups */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
+        .form-group { margin-bottom: 1.8rem; }
         label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.7rem;
             font-weight: 600;
-            color: var(--title);
-            font-size: 0.95rem;
+            color: var(--text);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 0.875rem;
-            border: 2px solid var(--border);
-            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            border: 1px solid #e1e1e1;
+            border-radius: 14px;
             font-size: 1rem;
-            transition: all 0.3s ease;
-            font-family: 'DM Sans', sans-serif;
-            background: var(--bg);
+            transition: all 0.2s;
+            font-family: 'Outfit', sans-serif;
+            background: #fcfcfc;
         }
 
-        input:focus, select:focus, textarea:focus {
+        input:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        input[type="color"] {
-            height: 50px;
-            cursor: pointer;
-        }
-
-        input[type="file"] {
-            padding: 0.5rem;
-        }
-
-        /* Image Gallery */
-        .image-gallery {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid var(--border);
-            background: var(--bg);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .gallery-item-emoji {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-        }
-
-        .gallery-item-remove {
-            position: absolute;
-            top: 2px;
-            right: 2px;
-            background: var(--primary);
-            color: var(--white);
-            border: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-item-remove {
-            opacity: 1;
-        }
-
-        .gallery-item-main {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
-        }
-
-        .gallery-item-main::after {
-            content: '★';
-            position: absolute;
-            bottom: 2px;
-            right: 2px;
-            background: var(--primary);
-            color: var(--white);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-        }
-
-        /* Variant Builder */
-        .variant-builder {
-            background: var(--bg);
-            border: 2px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .variant-builder-header {
-            display: flex;
-            gap: 0.75rem;
-            align-items: center;
-            margin-bottom: 0.75rem;
-        }
-
-        .variant-builder-header input {
-            flex: 1;
-        }
-
-        .variant-remove {
-            background: none;
-            border: none;
-            color: var(--primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.25rem;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-
-        .variant-remove:hover {
-            background: rgba(255, 107, 53, 0.1);
-        }
-
-        .variant-options-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .variant-option-tag {
+            border-color: var(--accent);
             background: var(--white);
-            border: 2px solid var(--border);
-            padding: 0.4rem 0.75rem;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
+            box-shadow: 0 0 0 4px rgba(176, 141, 87, 0.1);
         }
 
-        .variant-option-tag button {
-            background: none;
-            border: none;
-            color: var(--text-light);
-            cursor: pointer;
-            font-size: 1.2rem;
-            padding: 0;
-            line-height: 1;
-        }
-
-        .variant-option-tag button:hover {
-            color: var(--primary);
-        }
-
-        .variant-add-option {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .variant-add-option input {
-            flex: 1;
-        }
-
-        .variant-image-selector {
-            margin-top: 0.5rem;
-            padding: 0.75rem;
-            background: var(--white);
-            border-radius: 8px;
-        }
-
-        .variant-image-selector label {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        /* Products Grid */
+        /* Cuadrícula de Productos */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .product-card {
             background: var(--white);
-            border-radius: 16px;
+            border-radius: 28px;
             overflow: hidden;
-            border: 2px solid var(--border);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
             position: relative;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px var(--shadow);
-            border-color: var(--primary);
-        }
-
-        .product-image-container {
-            position: relative;
-            width: 100%;
-            height: 220px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
         }
 
         .product-image {
             width: 100%;
-            height: 100%;
+            height: 320px;
+            background: #f9f9f9;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: var(--text-light);
         }
 
         .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .product-card:hover .product-image img {
-            transform: scale(1.05);
-        }
-
-        .product-image.emoji {
-            font-size: 4rem;
-        }
+        .product-image.emoji { font-size: 5rem; }
 
         .product-content {
-            padding: 1.5rem;
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-category {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: var(--secondary);
-            color: var(--white);
-            border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 0.75rem;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
         }
 
         .product-name {
-            font-size: 1.25rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--title);
+            margin-bottom: 0.8rem;
+            color: var(--primary);
         }
 
         .product-description {
             color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
+            font-size: 0.95rem;
+            margin-bottom: 1.8rem;
+            line-height: 1.6;
         }
 
         .product-price {
-            font-size: 1.75rem;
-            font-weight: 900;
+            font-size: 1.6rem;
+            font-weight: 700;
             color: var(--primary);
-            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
         }
 
-        /* Variant Selection */
-        .variant-group {
-            margin-top: 1rem;
-        }
-
-        .variant-label {
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            color: var(--title);
-            display: block;
-        }
-
-        .variant-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
+        .variant-options { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.6rem; }
         .variant-option {
-            padding: 0.5rem 1rem;
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            background: var(--white);
+            padding: 0.6rem 1.2rem;
+            border: 1px solid #eeeeee;
+            border-radius: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .variant-option:hover {
-            border-color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: 0.2s;
         }
 
         .variant-option.selected {
@@ -647,1850 +346,680 @@
             border-color: var(--primary);
         }
 
-        /* Quantity Selector */
         .quantity-selector {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            margin-top: 1rem;
-            background: var(--bg);
-            padding: 0.5rem;
-            border-radius: 10px;
-        }
-
-        .quantity-selector span {
-            color: var(--text-light);
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .quantity-selector-controls {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-left: auto;
-        }
-
-        .quantity-selector-btn {
-            width: 36px;
-            height: 36px;
-            border: 2px solid var(--border);
-            background: var(--white);
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .quantity-selector-btn:hover {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-        }
-
-        .quantity-selector-value {
-            min-width: 40px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text);
-        }
-
-        .product-actions {
-            display: flex;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        /* Cart Modal */
-        .cart-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1000;
-            backdrop-filter: blur(4px);
-        }
-
-        .cart-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .cart-content {
-            background: var(--white);
-            border-radius: 20px;
-            max-width: 600px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 2rem;
-            position: relative;
-            animation: slideUp 0.4s ease;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .cart-header {
-            display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border);
-        }
-
-        .cart-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--title);
-        }
-
-        .close-btn {
-            background: none;
-            border: none;
-            font-size: 2rem;
-            cursor: pointer;
-            color: var(--text-light);
-            transition: color 0.3s ease;
-        }
-
-        .close-btn:hover {
-            color: var(--primary);
-        }
-
-        .customer-form {
-            background: var(--bg);
-            padding: 1.5rem;
-            border-radius: 12px;
+            background: #f5f5f7;
+            padding: 0.6rem;
+            border-radius: 16px;
             margin-bottom: 1.5rem;
-            border: 2px solid var(--border);
-        }
-
-        .customer-form h4 {
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--title);
-        }
-
-        .cart-item {
-            display: flex;
-            gap: 1rem;
-            padding: 1rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .cart-item-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 10px;
-            object-fit: cover;
-            background: var(--bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            flex-shrink: 0;
-            overflow: hidden;
-        }
-
-        .cart-item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .cart-item-info {
-            flex: 1;
-        }
-
-        .cart-item-name {
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-        }
-
-        .cart-item-variant {
-            font-size: 0.875rem;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-
-        .cart-item-controls {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .quantity-control {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--bg);
-            border-radius: 8px;
-            padding: 0.25rem;
         }
 
         .quantity-btn {
-            width: 30px;
-            height: 30px;
-            border: none;
-            background: var(--white);
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: all 0.2s ease;
-        }
-
-        .quantity-btn:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .quantity {
-            min-width: 30px;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        .cart-item-price {
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .btn-icon {
             width: 36px;
             height: 36px;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .cart-total {
-            padding: 1.5rem 0;
-            border-top: 2px solid var(--border);
-            margin-top: 1rem;
-        }
-
-        .total-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.75rem;
-            font-size: 1.1rem;
-        }
-
-        .total-row.final {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: var(--primary);
-            font-family: 'Playfair Display', serif;
-        }
-
-        .coupon-section {
-            margin: 1rem 0;
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .coupon-input {
-            flex: 1;
-        }
-
-        .empty-cart {
-            text-align: center;
-            padding: 3rem 1rem;
-            color: var(--text-light);
-        }
-
-        .empty-cart-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Share Section */
-        .share-section {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            color: var(--white);
-            padding: 2rem;
-            border-radius: 16px;
-            margin-top: 2rem;
-        }
-
-        .share-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .share-link {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .share-input {
-            flex: 1;
-            background: var(--white);
-            color: var(--text);
-        }
-
-        .qr-section {
-            margin-top: 1.5rem;
-            text-align: center;
-        }
-
-        #qrcode {
-            background: var(--white);
-            padding: 1rem;
             border-radius: 12px;
-            display: inline-block;
-            margin-top: 1rem;
+            background: var(--white);
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: var(--shadow-sm);
         }
 
-        /* Alerts */
-        .alert {
-            padding: 1rem 1.5rem;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            animation: slideDown 0.4s ease;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .alert-success {
-            background: #D4EDDA;
-            color: #155724;
-            border: 2px solid #C3E6CB;
-        }
-
-        .alert-info {
-            background: #D1ECF1;
-            color: #0C5460;
-            border: 2px solid #BEE5EB;
-        }
-
-        /* Customer View */
-        .customer-view .admin-panel {
+        .cart-modal {
             display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Responsive */
+        .cart-modal.active { display: flex; }
+
+        .cart-content {
+            background: var(--white);
+            width: 100%;
+            max-width: 500px;
+            border-radius: 35px;
+            padding: 3rem;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .alert {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1.2rem 2.5rem;
+            border-radius: 20px;
+            background: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-lg);
+            z-index: 4000;
+            animation: slideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Estilo para el seleccionador de imagen en variantes */
+        .variant-img-picker {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+        .variant-img-picker img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .variant-img-picker img.selected {
+            border-color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .hidden { display: none !important; }
+
         @media (max-width: 768px) {
-            .header-content {
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
-
-            .store-name {
-                font-size: 1.4rem;
-            }
-
-            .header-actions {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-                gap: 1.5rem;
-            }
-
-            .admin-title {
-                font-size: 2rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .cart-content {
-                width: 95%;
-                padding: 1.5rem;
-            }
+            .products-grid { grid-template-columns: 1fr; }
+            .admin-panel { padding: 1.5rem; }
+            .store-name { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <div class="logo-section">
+            <a href="#" class="logo-section" onclick="location.reload()">
                 <div class="logo" id="logoDisplay">🛒</div>
                 <h1 class="store-name" id="storeNameDisplay">Mi Tienda</h1>
-            </div>
+            </a>
             <div class="header-actions">
-                <div class="language-selector">
-                    <button class="lang-btn active" data-lang="es" onclick="changeLanguage('es')" title="Español">
-                        ES
-                    </button>
-                    <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')" title="English">
-                        EN
-                    </button>
-                </div>
-                <button class="btn btn-secondary" id="adminToggle">
-                    ⚙️ <span data-i18n="admin">Admin</span>
-                </button>
+                <button class="btn btn-secondary" id="adminToggle">⚙️ Panel</button>
                 <button class="btn btn-primary cart-btn" id="cartBtn">
-                    🛒 <span data-i18n="cart">Carrito</span>
+                    🛒 <span class="hidden sm:inline">Carrito</span>
                     <span class="cart-badge" id="cartBadge">0</span>
                 </button>
             </div>
         </div>
     </header>
 
+    <div id="loginModal" class="hidden" style="position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; z-index: 5000; backdrop-filter: blur(15px);">
+        <div style="background: var(--white); padding: 4rem 3rem; border-radius: 40px; max-width: 450px; width: 90%; text-align: center; box-shadow: var(--shadow-lg);">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5rem;">🔐</div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 2rem; color: var(--primary);">Acceso Privado</h2>
+            <div id="loginForm">
+                <div class="form-group"><input type="password" id="loginPassword" placeholder="Introduce tu clave" style="text-align: center; font-size: 1.2rem; padding: 1.2rem; border-radius: 20px;"></div>
+                <button class="btn btn-primary" onclick="attemptLogin()" style="width: 100%; padding: 1.2rem; font-size: 1rem; border-radius: 20px;">Acceder al Panel</button>
+                <a href="?shop=customer" style="display: block; margin-top: 2rem; font-size: 0.9rem; color: var(--text-light); text-decoration: none; font-weight: 500;">Continuar como cliente</a>
+            </div>
+            <div id="setupForm" class="hidden">
+                <p style="color: var(--text-light); margin-bottom: 2rem;">Configura tu contraseña para gestionar el catálogo.</p>
+                <div class="form-group"><input type="password" id="setupPassword1" placeholder="Nueva contraseña"></div>
+                <div class="form-group"><input type="password" id="setupPassword2" placeholder="Repite contraseña"></div>
+                <button class="btn btn-primary" onclick="setupPassword()" style="width: 100%; padding: 1.2rem;">Guardar Configuración</button>
+            </div>
+            <div id="loginError" class="hidden" style="background: #FFF0F0; color: #E53E3E; padding: 1rem; border-radius: 15px; margin-top: 2rem; font-size: 0.9rem; border: 1px solid #FED7D7;"></div>
+        </div>
+    </div>
+
     <div class="container">
-        <!-- Admin Panel -->
-        <div class="admin-panel" id="adminPanel">
-            <h2 class="admin-title" data-i18n="adminPanel">Panel de Administración</h2>
-
+        <div class="admin-panel hidden" id="adminPanel">
+            <h2 class="admin-title">Configuración</h2>
             <div class="tabs">
-                <button class="tab active" data-tab="design" data-i18n="designTab">🎨 Diseño</button>
-                <button class="tab" data-tab="products" data-i18n="productsTab">📦 Productos</button>
-                <button class="tab" data-tab="categories" data-i18n="categoriesTab">📑 Categorías</button>
-                <button class="tab" data-tab="coupons" data-i18n="couponsTab">🎁 Cupones</button>
-                <button class="tab" data-tab="share" data-i18n="shareTab">🔗 Compartir</button>
-                <button class="tab" data-tab="data" data-i18n="dataTab">💾 Datos</button>
+                <button class="tab active" data-tab="design">🎨 Estética</button>
+                <button class="tab" data-tab="products">📦 Inventario</button>
+                <button class="tab" data-tab="categories">📑 Categorías</button>
+                <button class="tab" data-tab="coupons">🎁 Cupones</button>
+                <button class="tab" data-tab="share">🔗 Enlace</button>
+                <button class="tab" data-tab="data">💾 Backup</button>
             </div>
 
-            <!-- Design Tab -->
             <div class="tab-content active" id="design">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label data-i18n="storeName">Nombre de la Tienda</label>
-                        <input type="text" id="storeName" placeholder="Mi Tienda">
-                    </div>
-                    <div class="form-group">
-                        <label data-i18n="storeLogo">Logo (emoji o texto)</label>
-                        <input type="text" id="storeLogo" placeholder="🛒" maxlength="2">
-                    </div>
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group"><label>Nombre Tienda</label><input type="text" id="storeName"></div>
+                    <div class="form-group"><label>WhatsApp</label><input type="text" id="whatsappNumber"></div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label data-i18n="primaryColor">Color Principal</label>
-                        <input type="color" id="primaryColor" value="#FF6B35">
-                    </div>
-                    <div class="form-group">
-                        <label data-i18n="accentColor">Color Acento</label>
-                        <input type="color" id="accentColor" value="#F7B32B">
-                    </div>
+                <div class="form-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+                    <div class="form-group"><label>Icono</label><input type="text" id="storeLogo" maxlength="2"></div>
+                    <div class="form-group"><label>Color</label><input type="color" id="primaryColor" style="height: 55px;"></div>
+                    <div class="form-group"><label>Moneda</label><select id="currencySymbol"></select></div>
                 </div>
-                <div class="form-group">
-                    <label data-i18n="whatsappNumber">Número de WhatsApp (con código de país)</label>
-                    <input type="text" id="whatsappNumber" placeholder="+34612345678">
-                </div>
-                <button class="btn btn-primary" onclick="saveDesign()">
-                    💾 <span data-i18n="saveDesign">Guardar Diseño</span>
-                </button>
+                <div class="form-group"><label>Texto Botón Comprar</label><input type="text" id="addToCartText"></div>
+                <button class="btn btn-primary" onclick="saveDesign()" style="width: 100%;">💾 Guardar Cambios</button>
             </div>
 
-            <!-- Products Tab -->
             <div class="tab-content" id="products">
-                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;" data-i18n="addProduct">Agregar Producto</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label data-i18n="productName">Nombre del Producto</label>
-                        <input type="text" id="productName" placeholder="Nombre del producto">
-                    </div>
-                    <div class="form-group">
-                        <label data-i18n="category">Categoría</label>
-                        <select id="productCategory">
-                            <option value="General">General</option>
-                        </select>
-                    </div>
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group"><label>Nombre</label><input type="text" id="productName"></div>
+                    <div class="form-group"><label>Categoría</label><select id="productCategory"></select></div>
                 </div>
-                <div class="form-group">
-                    <label data-i18n="description">Descripción</label>
-                    <textarea id="productDescription" placeholder="Descripción del producto"></textarea>
-                </div>
-                <div class="form-row">
+                <div class="form-group"><label>Descripción</label><textarea id="productDescription" rows="3"></textarea></div>
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group"><label>Precio</label><input type="number" id="productPrice" step="0.01"></div>
                     <div class="form-group">
-                        <label data-i18n="price">Precio</label>
-                        <input type="number" id="productPrice" placeholder="0.00" step="0.01" min="0">
+                        <label>Imágenes (Sube primero las imágenes)</label>
+                        <input type="file" id="productImageFile" accept="image/*" multiple>
+                        <div id="imagesPreview" style="display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap;"></div>
+                        <button class="btn btn-secondary" onclick="clearTempImages()" style="margin-top: 1rem; font-size: 0.7rem;">Limpiar Imágenes</button>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label data-i18n="productImages">Imágenes del Producto</label>
-                    <input type="file" id="productImageFiles" accept="image/*" multiple>
-                    <small style="color: var(--text-light); display: block; margin-top: 0.5rem;" data-i18n="multipleImagesHelp">
-                        Puedes subir múltiples imágenes. La primera será la principal.
-                    </small>
-                    <div class="image-gallery" id="imageGallery"></div>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="productVariants">Variantes del Producto</label>
+                    <label>Variantes</label>
                     <div id="variantsContainer"></div>
-                    <button type="button" class="btn btn-secondary btn-sm" onclick="addVariantGroup()" style="margin-top: 0.5rem;">
-                        ➕ <span data-i18n="addVariantGroup">Añadir Grupo de Variantes</span>
-                    </button>
+                    <button class="btn btn-secondary" onclick="addVariantGroup()">+ Nuevo Grupo de Variantes</button>
                 </div>
-                <button class="btn btn-primary" onclick="addProduct()">
-                    ➕ <span data-i18n="addProductBtn">Agregar Producto</span>
-                </button>
-
-                <div id="productsList" style="margin-top: 2rem;"></div>
+                <button class="btn btn-primary" onclick="addProduct()" style="width: 100%;">➕ Publicar Producto</button>
+                <div id="productsList" style="margin-top: 4rem;"></div>
             </div>
 
-            <!-- Categories Tab -->
             <div class="tab-content" id="categories">
-                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;" data-i18n="manageCategories">Gestionar Categorías</h3>
-                <div class="form-group">
-                    <label data-i18n="newCategory">Nueva Categoría</label>
-                    <input type="text" id="newCategory" placeholder="Nombre de categoría">
-                </div>
-                <button class="btn btn-primary" onclick="addCategory()">
-                    ➕ <span data-i18n="addCategoryBtn">Agregar Categoría</span>
-                </button>
-                <div id="categoriesList" style="margin-top: 1.5rem;"></div>
+                <div class="form-group"><label>Nueva Categoría</label><input type="text" id="newCategory"></div>
+                <button class="btn btn-primary" onclick="addCategory()">Crear Categoría</button>
+                <div id="categoriesList" style="margin-top: 3rem;"></div>
             </div>
 
-            <!-- Coupons Tab -->
             <div class="tab-content" id="coupons">
-                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;" data-i18n="createCoupon">Crear Cupón</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label data-i18n="couponCode">Código del Cupón</label>
-                        <input type="text" id="couponCode" placeholder="DESCUENTO10" style="text-transform: uppercase;">
-                    </div>
-                    <div class="form-group">
-                        <label data-i18n="discountType">Tipo de Descuento</label>
-                        <select id="couponType">
-                            <option value="percentage" data-i18n="percentage">Porcentaje (%)</option>
-                            <option value="fixed" data-i18n="fixedAmount">Cantidad Fija (€)</option>
-                        </select>
-                    </div>
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group"><label>Código</label><input type="text" id="couponCode"></div>
+                    <div class="form-group"><label>Tipo</label><select id="couponType"><option value="percentage">% Descuento</option><option value="fixed">Importe Fijo</option></select></div>
                 </div>
-                <div class="form-group">
-                    <label data-i18n="discountValue">Valor del Descuento</label>
-                    <input type="number" id="couponValue" placeholder="10" step="0.01" min="0">
-                </div>
-                <button class="btn btn-primary" onclick="addCoupon()">
-                    🎁 <span data-i18n="createCouponBtn">Crear Cupón</span>
-                </button>
-                <div id="couponsList" style="margin-top: 1.5rem;"></div>
+                <div class="form-group"><label>Valor</label><input type="number" id="couponValue"></div>
+                <button class="btn btn-primary" onclick="addCoupon()">Generar Cupón</button>
+                <div id="couponsList" style="margin-top: 3rem;"></div>
             </div>
 
-            <!-- Share Tab -->
             <div class="tab-content" id="share">
-                <div class="share-section">
-                    <h3 class="share-title">🔗 <span data-i18n="shareStore">Comparte tu Tienda</span></h3>
-                    <p data-i18n="shareDescription">Copia este enlace y envíaselo a tus clientes</p>
-                    <div class="share-link">
-                        <input type="text" class="share-input" id="shareLink" readonly>
-                        <button class="btn btn-primary" onclick="copyLink()">
-                            📋 <span data-i18n="copy">Copiar</span>
-                        </button>
-                    </div>
-                    <div class="qr-section">
-                        <h4 data-i18n="qrCode">Código QR de tu tienda</h4>
-                        <div id="qrcode"></div>
-                        <button class="btn btn-secondary" onclick="downloadQR()" style="margin-top: 1rem;">
-                            ⬇️ <span data-i18n="downloadQR">Descargar QR</span>
-                        </button>
+                <div style="background: #fafafa; padding: 3rem; border-radius: 30px; text-align: center;">
+                    <input type="text" id="shareLink" readonly style="text-align: center; margin-bottom: 2rem;">
+                    <div id="qrcode" style="display: flex; justify-content: center; margin-bottom: 2rem;"></div>
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <button class="btn btn-primary" onclick="copyLink()">📋 Copiar Enlace</button>
+                        <button class="btn btn-secondary" onclick="downloadQR()">📥 Descargar QR</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Data Tab -->
             <div class="tab-content" id="data">
-                <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;" data-i18n="dataManagement">Gestión de Datos</h3>
-                <div class="form-group">
-                    <label data-i18n="exportConfig">Exportar Configuración</label>
-                    <p style="color: var(--text-light); margin-bottom: 1rem;" data-i18n="exportHelp">
-                        Descarga toda tu configuración como backup
-                    </p>
-                    <button class="btn btn-primary" onclick="exportData()">
-                        ⬇️ <span data-i18n="exportJSON">Exportar JSON</span>
-                    </button>
-                </div>
-                <div class="form-group" style="margin-top: 2rem;">
-                    <label data-i18n="importConfig">Importar Configuración</label>
-                    <p style="color: var(--text-light); margin-bottom: 1rem;" data-i18n="importHelp">
-                        Sube un archivo JSON previamente exportado
-                    </p>
-                    <input type="file" id="importFile" accept=".json">
-                    <button class="btn btn-primary" onclick="importData()" style="margin-top: 1rem;">
-                        ⬆️ <span data-i18n="importBtn">Importar</span>
-                    </button>
-                </div>
-                <div class="form-group" style="margin-top: 2rem;">
-                    <label style="color: var(--primary);" data-i18n="dangerZone">⚠️ Zona de Peligro</label>
-                    <p style="color: var(--text-light); margin-bottom: 1rem;" data-i18n="resetWarning">
-                        Esta acción eliminará todos los datos
-                    </p>
-                    <button class="btn btn-secondary" onclick="resetData()" style="background: #e74c3c; border-color: #e74c3c;">
-                        🗑️ <span data-i18n="resetAll">Resetear Todo</span>
-                    </button>
-                </div>
+                <button class="btn btn-primary" onclick="exportData()" style="width: 100%; margin-bottom: 2rem;">⬇️ Descargar Copia</button>
+                <input type="file" id="importFile" accept=".json">
+                <button class="btn btn-secondary" onclick="importData()" style="width: 100%; margin-top: 1rem;">⬆️ Cargar Datos</button>
+                <button class="btn btn-secondary" onclick="resetData()" style="background: #fee2e2; color: #dc2626; margin-top: 2rem; width: 100%;">🗑️ Borrar Todo</button>
             </div>
         </div>
 
-        <!-- Products Display -->
         <div id="productsDisplay"></div>
     </div>
 
-    <!-- Cart Modal -->
     <div class="cart-modal" id="cartModal">
         <div class="cart-content">
-            <div class="cart-header">
-                <h3 class="cart-title">🛒 <span data-i18n="yourCart">Tu Carrito</span></h3>
-                <button class="close-btn" onclick="closeCart()">&times;</button>
+            <button onclick="closeCart()" style="position: absolute; top: 25px; right: 25px; background:none; border:none; font-size: 1.5rem; cursor:pointer;">✕</button>
+            <div class="cart-header"><h3 style="font-family:'Playfair Display'; font-size:2rem; text-align:center;">Tu Pedido</h3></div>
+            <div id="customerForm" class="hidden" style="background:#f8f8f8; padding:2rem; border-radius:25px; margin-bottom:2rem;">
+                <div class="form-group"><input type="text" id="customerName" placeholder="Nombre completo"></div>
+                <div class="form-group"><input type="tel" id="customerPhone" placeholder="Móvil"></div>
+                <div class="form-group"><textarea id="customerAddress" placeholder="Dirección"></textarea></div>
             </div>
-            
-            <div class="customer-form" id="customerForm" style="display: none;">
-                <h4 data-i18n="customerInfo">📋 Información del Cliente</h4>
-                <div class="form-group">
-                    <label data-i18n="fullName">👤 Nombre completo</label>
-                    <input type="text" id="customerName" placeholder="Tu nombre">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="phone">📞 Teléfono</label>
-                    <input type="tel" id="customerPhone" placeholder="+34 612 345 678">
-                </div>
-                <div class="form-group">
-                    <label data-i18n="address">📍 Dirección de entrega</label>
-                    <textarea id="customerAddress" placeholder="Calle, número, piso, ciudad, código postal" rows="2"></textarea>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="notes">📝 Notas adicionales (opcional)</label>
-                    <textarea id="customerNotes" placeholder="Instrucciones especiales, preferencias..." rows="2"></textarea>
-                </div>
-            </div>
-            
             <div id="cartItems"></div>
-            <div class="cart-total" id="cartTotal" style="display: none;">
-                <div class="coupon-section">
-                    <input type="text" class="coupon-input" id="couponInput" data-i18n-placeholder="couponCodePlaceholder" placeholder="Código de cupón" style="text-transform: uppercase;">
-                    <button class="btn btn-secondary btn-sm" onclick="applyCoupon()">
-                        <span data-i18n="apply">Aplicar</span>
-                    </button>
+            <div id="cartTotal" class="hidden" style="margin-top: 2rem; border-top: 2px solid #eee; padding-top: 2rem;">
+                <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 2rem; margin-bottom: 2rem;">
+                    <span>Total:</span><span id="total">0.00</span>
                 </div>
-                <div class="total-row">
-                    <span data-i18n="subtotal">Subtotal:</span>
-                    <span id="subtotal">€0.00</span>
-                </div>
-                <div class="total-row" id="discountRow" style="display: none; color: var(--success);">
-                    <span data-i18n="discount">Descuento:</span>
-                    <span id="discount">-€0.00</span>
-                </div>
-                <div class="total-row final">
-                    <span data-i18n="total">Total:</span>
-                    <span id="total">€0.00</span>
-                </div>
-                <button class="btn btn-primary" onclick="sendWhatsApp()" style="width: 100%; margin-top: 1rem; font-size: 1.1rem;">
-                    📱 <span data-i18n="sendOrder">Enviar Pedido por WhatsApp</span>
-                </button>
+                <button class="btn btn-primary" onclick="sendWhatsApp()" style="width: 100%; padding: 1.5rem;">Pedir por WhatsApp</button>
             </div>
         </div>
     </div>
 
-    <!-- Admin Login Modal -->
-    <div class="cart-modal" id="adminLoginModal" style="display: none;">
-        <div class="cart-content" style="max-width: 400px;">
-            <div class="cart-header">
-                <h3 class="cart-title">🔒 <span data-i18n="adminAccess">Acceso Admin</span></h3>
-                <button class="close-btn" onclick="closeAdminLogin()">&times;</button>
-            </div>
-            <div style="padding: 1rem 0;">
-                <div class="form-group">
-                    <label data-i18n="adminPassword">Contraseña de Administrador</label>
-                    <input type="password" id="adminPasswordInput" placeholder="••••••••" onkeypress="if(event.key==='Enter') checkAdminPassword()">
-                    <small style="color: var(--text-light); display: block; margin-top: 0.5rem;" data-i18n="adminPasswordHelp">
-                        Puedes cambiar la contraseña en la pestaña "Diseño"
-                    </small>
-                </div>
-                <button class="btn btn-primary" onclick="checkAdminPassword()" style="width: 100%; margin-top: 1rem;">
-                    🔓 <span data-i18n="unlock">Desbloquear</span>
-                </button>
-                <div id="loginError" style="display: none; color: #e74c3c; margin-top: 1rem; padding: 0.75rem; background: rgba(231, 76, 60, 0.1); border-radius: 8px; text-align: center;"></div>
-            </div>
-        </div>
-    </div>
+    <footer style="text-align: center; padding: 6rem 1rem; color: var(--text-light);">&copy; 2026 Todos los derechos reservados.</footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script>
-        // Translations
-        const translations = {
-            es: {
-                admin: "Admin",
-                cart: "Carrito",
-                adminPanel: "Panel de Administración",
-                designTab: "🎨 Diseño",
-                productsTab: "📦 Productos",
-                categoriesTab: "📑 Categorías",
-                couponsTab: "🎁 Cupones",
-                shareTab: "🔗 Compartir",
-                dataTab: "💾 Datos",
-                storeName: "Nombre de la Tienda",
-                storeLogo: "Logo (emoji o texto)",
-                primaryColor: "Color Principal",
-                accentColor: "Color Acento",
-                whatsappNumber: "Número de WhatsApp (con código de país)",
-                saveDesign: "Guardar Diseño",
-                addProduct: "Agregar Producto",
-                productName: "Nombre del Producto",
-                category: "Categoría",
-                description: "Descripción",
-                price: "Precio",
-                productImages: "Imágenes del Producto",
-                multipleImagesHelp: "Puedes subir múltiples imágenes. La primera será la principal.",
-                productVariants: "Variantes del Producto",
-                addVariantGroup: "Añadir Grupo de Variantes",
-                addProductBtn: "Agregar Producto",
-                manageCategories: "Gestionar Categorías",
-                newCategory: "Nueva Categoría",
-                addCategoryBtn: "Agregar Categoría",
-                createCoupon: "Crear Cupón",
-                couponCode: "Código del Cupón",
-                discountType: "Tipo de Descuento",
-                percentage: "Porcentaje (%)",
-                fixedAmount: "Cantidad Fija (€)",
-                discountValue: "Valor del Descuento",
-                createCouponBtn: "Crear Cupón",
-                shareStore: "Comparte tu Tienda",
-                shareDescription: "Copia este enlace y envíaselo a tus clientes",
-                copy: "Copiar",
-                qrCode: "Código QR de tu tienda",
-                downloadQR: "Descargar QR",
-                dataManagement: "Gestión de Datos",
-                exportConfig: "Exportar Configuración",
-                exportHelp: "Descarga toda tu configuración como backup",
-                exportJSON: "Exportar JSON",
-                importConfig: "Importar Configuración",
-                importHelp: "Sube un archivo JSON previamente exportado",
-                importBtn: "Importar",
-                dangerZone: "⚠️ Zona de Peligro",
-                resetWarning: "Esta acción eliminará todos los datos",
-                resetAll: "Resetear Todo",
-                yourCart: "Tu Carrito",
-                customerInfo: "📋 Información del Cliente",
-                fullName: "👤 Nombre completo",
-                phone: "📞 Teléfono",
-                address: "📍 Dirección de entrega",
-                notes: "📝 Notas adicionales (opcional)",
-                couponCodePlaceholder: "Código de cupón",
-                apply: "Aplicar",
-                subtotal: "Subtotal:",
-                discount: "Descuento:",
-                total: "Total:",
-                sendOrder: "Enviar Pedido por WhatsApp",
-                quantity: "Cantidad:",
-                addToCart: "Agregar al Carrito",
-                emptyCart: "Tu carrito está vacío",
-                emptyCartDesc: "¡Agrega algunos productos para comenzar!"
-            },
-            en: {
-                admin: "Admin",
-                cart: "Cart",
-                adminPanel: "Administration Panel",
-                designTab: "🎨 Design",
-                productsTab: "📦 Products",
-                categoriesTab: "📑 Categories",
-                couponsTab: "🎁 Coupons",
-                shareTab: "🔗 Share",
-                dataTab: "💾 Data",
-                storeName: "Store Name",
-                storeLogo: "Logo (emoji or text)",
-                primaryColor: "Primary Color",
-                accentColor: "Accent Color",
-                whatsappNumber: "WhatsApp Number (with country code)",
-                saveDesign: "Save Design",
-                addProduct: "Add Product",
-                productName: "Product Name",
-                category: "Category",
-                description: "Description",
-                price: "Price",
-                productImages: "Product Images",
-                multipleImagesHelp: "You can upload multiple images. The first one will be the main image.",
-                productVariants: "Product Variants",
-                addVariantGroup: "Add Variant Group",
-                addProductBtn: "Add Product",
-                manageCategories: "Manage Categories",
-                newCategory: "New Category",
-                addCategoryBtn: "Add Category",
-                createCoupon: "Create Coupon",
-                couponCode: "Coupon Code",
-                discountType: "Discount Type",
-                percentage: "Percentage (%)",
-                fixedAmount: "Fixed Amount (€)",
-                discountValue: "Discount Value",
-                createCouponBtn: "Create Coupon",
-                shareStore: "Share Your Store",
-                shareDescription: "Copy this link and send it to your customers",
-                copy: "Copy",
-                qrCode: "Your store QR code",
-                downloadQR: "Download QR",
-                dataManagement: "Data Management",
-                exportConfig: "Export Configuration",
-                exportHelp: "Download your complete configuration as backup",
-                exportJSON: "Export JSON",
-                importConfig: "Import Configuration",
-                importHelp: "Upload a previously exported JSON file",
-                importBtn: "Import",
-                dangerZone: "⚠️ Danger Zone",
-                resetWarning: "This action will delete all data",
-                resetAll: "Reset Everything",
-                yourCart: "Your Cart",
-                customerInfo: "📋 Customer Information",
-                fullName: "👤 Full name",
-                phone: "📞 Phone",
-                address: "📍 Delivery address",
-                notes: "📝 Additional notes (optional)",
-                couponCodePlaceholder: "Coupon code",
-                apply: "Apply",
-                subtotal: "Subtotal:",
-                discount: "Discount:",
-                total: "Total:",
-                sendOrder: "Send Order via WhatsApp",
-                quantity: "Quantity:",
-                addToCart: "Add to Cart",
-                emptyCart: "Your cart is empty",
-                emptyCartDesc: "Add some products to get started!"
-            }
-        };
+        const currencies = [
+            {s: '€', n: 'EUR - Euro'}, {s: '$', n: 'USD - Dólar'}, {s: '£', n: 'GBP - Libra'}, {s: '¥', n: 'JPY - Yen'},
+            {s: 'A$', n: 'AUD - Dólar Aus'}, {s: 'C$', n: 'CAD - Dólar Can'}, {s: 'CHF', n: 'CHF - Franco Suizo'}, {s: '元', n: 'CNY - Yuan'},
+            {s: 'kr', n: 'SEK - Corona Sueca'}, {s: 'NZ$', n: 'NZD - Dólar NZ'}, {s: '₩', n: 'KRW - Won'}, {s: 'S$', n: 'SGD - Dólar Sing'},
+            {s: 'HK$', n: 'HKD - Dólar HK'}, {s: 'kr', n: 'NOK - Corona Noruega'}, {s: 'Mex$', n: 'MXN - Peso Mexicano'}, {s: '₹', n: 'INR - Rupia India'},
+            {s: 'R$', n: 'BRL - Real Brasileño'}, {s: '₽', n: 'RUB - Rublo Ruso'}, {s: 'R', n: 'ZAR - Rand Sudafricano'}, {s: '₺', n: 'TRY - Lira Turca'},
+            {s: 'NT$', n: 'TWD - Dólar Taiwán'}, {s: '฿', n: 'THB - Baht Tailandés'}, {s: 'zł', n: 'PLN - Zloty Polaco'}, {s: '₪', n: 'ILS - Shekel Israelí'},
+            {s: 'Rp', n: 'IDR - Rupia Indonesia'}, {s: '₱', n: 'PHP - Peso Filipino'}, {s: 'RM', n: 'MYR - Ringgit Malayo'}, {s: 'د.إ', n: 'AED - Dirham EAU'},
+            {s: 'COL$', n: 'COP - Peso Colombiano'}, {s: 'S/.', n: 'PEN - Sol Peruano'}, {s: 'ARS$', n: 'ARS - Peso Argentino'}, {s: 'CLP$', n: 'CLP - Peso Chileno'},
+            {s: '₲', n: 'PYG - Guaraní'}, {s: 'U$U', n: 'UYU - Peso Uruguayo'}, {s: 'Bs.', n: 'BOB - Boliviano'}, {s: 'Q', n: 'GTQ - Quetzal'},
+            {s: 'L', n: 'HNL - Lempira'}, {s: 'C$', n: 'NIO - Córdoba'}, {s: '₡', n: 'CRC - Colón'}, {s: 'RD$', n: 'DOP - Peso Dom'},
+            {s: 'B/.', n: 'PAB - Balboa'}, {s: 'KSh', n: 'KES - Chelín Keniano'}, {s: '₦', n: 'NGN - Naira'}, {s: 'GH₵', n: 'GHS - Cedi'},
+            {s: '₫', n: 'VND - Dong'}, {s: 'K', n: 'MMK - Kyat'}, {s: '៛', n: 'KHR - Riel'}, {s: '₭', n: 'LAK - Kip'}
+        ];
 
-        // Data Store
         let storeData = {
-            name: 'Mi Tienda',
-            logo: '🛒',
-            primaryColor: '#FF6B35',
-            accentColor: '#F7B32B',
-            whatsapp: '',
-            products: [],
-            categories: ['General'],
-            coupons: [],
-            cart: [],
-            appliedCoupon: null,
-            language: 'es'
+            name: 'Mi Tienda', logo: '🛒', primaryColor: '#121212', currency: '€',
+            addToCartText: '🛒 Agregar al Carrito', whatsapp: '',
+            auth: { passwordHash: null, isAuthenticated: false },
+            products: [], categories: ['General'], coupons: [], cart: []
         };
 
-        let variantGroupCounter = 0;
-        let productQuantities = {};
-        let currentProductImages = [];
+        let tempProductImages = [];
 
-        // Check if customer view
-        const urlParams = new URLSearchParams(window.location.search);
-        const isCustomerView = urlParams.get('shop') === 'customer';
-
-        // Initialize
-        window.onload = function() {
+        function init() {
+            populateCurrencies();
             loadData();
-            if (isCustomerView) {
-                document.body.classList.add('customer-view');
-                document.getElementById('adminToggle').style.display = 'none';
-            }
             updateDisplay();
             initializeTabs();
             generateShareLink();
-            setupImageUpload();
-            updateLanguage();
-        };
-
-        // Language System
-        function changeLanguage(lang) {
-            storeData.language = lang;
-            saveData();
-            updateLanguage();
-            
-            // Update active button
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.lang === lang);
-            });
+            setupImagePreview();
+            if (new URLSearchParams(window.location.search).get('shop') === 'customer') {
+                document.getElementById('adminToggle').classList.add('hidden');
+            } else { checkAdminAccess(); }
         }
 
-        function updateLanguage() {
-            const lang = storeData.language;
-            const t = translations[lang];
-            
-            // Update all elements with data-i18n
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (t[key]) {
-                    el.textContent = t[key];
-                }
-            });
-            
-            // Update placeholders
-            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-                const key = el.getAttribute('data-i18n-placeholder');
-                if (t[key]) {
-                    el.placeholder = t[key];
-                }
-            });
+        function populateCurrencies() {
+            const select = document.getElementById('currencySymbol');
+            select.innerHTML = currencies.map(c => `<option value="${c.s}">${c.n} (${c.s})</option>`).join('');
         }
 
-        // Load data from localStorage
-        function loadData() {
-            const saved = localStorage.getItem('storeData');
-            if (saved) {
-                storeData = JSON.parse(saved);
-            }
-            
-            // Update form fields
-            document.getElementById('storeName').value = storeData.name;
-            document.getElementById('storeLogo').value = storeData.logo;
-            document.getElementById('primaryColor').value = storeData.primaryColor;
-            document.getElementById('accentColor').value = storeData.accentColor;
-            document.getElementById('whatsappNumber').value = storeData.whatsapp || '';
-            
-            // Set language
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.lang === storeData.language);
-            });
-            
-            updateColors();
-        }
-
-        // Save data to localStorage
-        function saveData() {
-            localStorage.setItem('storeData', JSON.stringify(storeData));
-        }
-
-        // Update display
-        function updateDisplay() {
-            document.getElementById('storeNameDisplay').textContent = storeData.name;
-            document.getElementById('logoDisplay').textContent = storeData.logo;
-            updateCartBadge();
-            displayProducts();
-            displayCategories();
-            displayCoupons();
-            updateCategorySelect();
-        }
-
-        // Update colors
-        function updateColors() {
-            document.documentElement.style.setProperty('--primary', storeData.primaryColor);
-            document.documentElement.style.setProperty('--accent', storeData.accentColor);
-        }
-
-        // Tabs
-        function initializeTabs() {
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.addEventListener('click', () => {
-                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-                    tab.classList.add('active');
-                    document.getElementById(tab.dataset.tab).classList.add('active');
+        function setupImagePreview() {
+            const fileInput = document.getElementById('productImageFile');
+            fileInput.addEventListener('change', function(e) {
+                Array.from(e.target.files).forEach((file) => {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        tempProductImages.push(event.target.result);
+                        renderImagePreviews();
+                    };
+                    reader.readAsDataURL(file);
                 });
             });
         }
 
-        // Design
-        function saveDesign() {
-            storeData.name = document.getElementById('storeName').value || 'Mi Tienda';
-            storeData.logo = document.getElementById('storeLogo').value || '🛒';
-            storeData.primaryColor = document.getElementById('primaryColor').value;
-            storeData.accentColor = document.getElementById('accentColor').value;
-            storeData.whatsapp = document.getElementById('whatsappNumber').value;
+        function renderImagePreviews() {
+            const previewContainer = document.getElementById('imagesPreview');
+            previewContainer.innerHTML = tempProductImages.map((src, idx) => `
+                <div style="position:relative; width:60px; height:60px; border-radius:8px; overflow:hidden; border:1px solid #eee;">
+                    <img src="${src}" style="width:100%; height:100%; object-fit:cover;">
+                    <button onclick="removeTempImage(${idx})" style="position:absolute; top:0; right:0; background:red; color:white; border:none; cursor:pointer; font-size:10px; width:15px; height:15px;">✕</button>
+                </div>
+            `).join('');
             
-            saveData();
-            updateColors();
-            updateDisplay();
-            showAlert('✅ ' + (storeData.language === 'es' ? 'Diseño guardado correctamente' : 'Design saved successfully'), 'success');
-        }
-
-        // Image Upload Handler
-        function setupImageUpload() {
-            const fileInput = document.getElementById('productImageFiles');
-            fileInput.addEventListener('change', handleImageUpload);
-        }
-
-        function handleImageUpload(e) {
-            const files = e.target.files;
-            const gallery = document.getElementById('imageGallery');
-            
-            Array.from(files).forEach((file, index) => {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    currentProductImages.push(event.target.result);
-                    displayImageGallery();
-                };
-                reader.readAsDataURL(file);
+            // Actualizar los selectores de imágenes en las variantes existentes
+            document.querySelectorAll('.variant-img-picker').forEach(picker => {
+                const groupId = picker.dataset.groupId;
+                updateVariantImgPicker(groupId);
             });
         }
 
-        function displayImageGallery() {
-            const gallery = document.getElementById('imageGallery');
-            gallery.innerHTML = currentProductImages.map((img, index) => `
-                <div class="gallery-item ${index === 0 ? 'gallery-item-main' : ''}" data-index="${index}">
-                    <img src="${img}" alt="Product image ${index + 1}">
-                    <button class="gallery-item-remove" onclick="removeImage(${index})">×</button>
-                </div>
-            `).join('');
+        function updateVariantImgPicker(groupId) {
+            const picker = document.querySelector(`#v-group-${groupId} .variant-img-picker`);
+            if(!picker) return;
+            picker.innerHTML = tempProductImages.map((src, idx) => `
+                <img src="${src}" onclick="selectVariantImage(this, '${groupId}')" data-idx="${idx}">
+            `).join('') || '<p style="font-size:0.7rem; color:#999;">Sube imágenes arriba para seleccionar una</p>';
         }
 
-        function removeImage(index) {
-            currentProductImages.splice(index, 1);
-            displayImageGallery();
+        function selectVariantImage(el, groupId) {
+            const picker = el.parentElement;
+            picker.querySelectorAll('img').forEach(img => img.classList.remove('selected'));
+            el.classList.add('selected');
+            picker.dataset.selectedIdx = el.dataset.idx;
         }
 
-        // Variant Group Builder
+        function removeTempImage(idx) {
+            tempProductImages.splice(idx, 1);
+            renderImagePreviews();
+        }
+
+        function clearTempImages() {
+            tempProductImages = [];
+            renderImagePreviews();
+        }
+
         function addVariantGroup() {
-            const container = document.getElementById('variantsContainer');
-            const groupId = variantGroupCounter++;
-            
-            const groupDiv = document.createElement('div');
-            groupDiv.className = 'variant-builder';
-            groupDiv.id = `variant-group-${groupId}`;
-            groupDiv.innerHTML = `
-                <div class="variant-builder-header">
-                    <input type="text" placeholder="${storeData.language === 'es' ? 'Ej: Talla, Color, Material...' : 'Ex: Size, Color, Material...'}" id="variant-name-${groupId}" class="variant-group-name">
-                    <button type="button" class="variant-remove" onclick="removeVariantGroup(${groupId})">×</button>
+            const id = Date.now();
+            const div = document.createElement('div');
+            div.className = 'variant-builder';
+            div.style.cssText = 'background:#f8f8f8; padding:1.5rem; border-radius:20px; margin-bottom:1.5rem; border:1px solid #eee;';
+            div.id = `v-group-${id}`;
+            div.innerHTML = `
+                <input type="text" placeholder="Ej: Talla o Color" class="v-name" style="margin-bottom:1rem">
+                <div class="v-options-list" style="margin-bottom:1rem; display:flex; flex-wrap:wrap; gap:0.5rem;"></div>
+                <div style="display:grid; gap:0.5rem;">
+                    <input type="text" placeholder="Opción (XL, Rojo...)" class="v-opt-in">
+                    <label style="font-size:0.7rem">Selecciona imagen de este producto para esta opción:</label>
+                    <div class="variant-img-picker" data-group-id="${id}"></div>
+                    <button class="btn btn-secondary" onclick="addVariantOption(${id})">Añadir Opción</button>
                 </div>
-                <div class="variant-options-list" id="variant-options-${groupId}"></div>
-                <div class="variant-add-option">
-                    <input type="text" placeholder="${storeData.language === 'es' ? 'Opción...' : 'Option...'}" id="variant-option-input-${groupId}" onkeypress="if(event.key==='Enter'){event.preventDefault();addVariantOption(${groupId});}">
-                    <button type="button" class="btn btn-secondary btn-sm" onclick="addVariantOption(${groupId})">
-                        ${storeData.language === 'es' ? 'Añadir' : 'Add'}
-                    </button>
-                </div>
-                <div class="variant-image-selector" id="variant-images-${groupId}">
-                    <label>${storeData.language === 'es' ? 'Vincular imágenes a opciones:' : 'Link images to options:'}</label>
-                    <small style="display: block; color: var(--text-light); margin-top: 0.25rem;">
-                        ${storeData.language === 'es' ? 'Al agregar opciones, podrás asignarles imágenes específicas' : 'When adding options, you can assign specific images to them'}
-                    </small>
-                </div>
+                <button onclick="this.parentElement.remove()" style="margin-top:1rem; color:red; border:none; background:none; cursor:pointer">Eliminar Grupo</button>
             `;
-            
-            container.appendChild(groupDiv);
+            document.getElementById('variantsContainer').appendChild(div);
+            updateVariantImgPicker(id);
         }
 
-        function removeVariantGroup(groupId) {
-            const group = document.getElementById(`variant-group-${groupId}`);
-            if (group) group.remove();
-        }
+        function addVariantOption(id) {
+            const group = document.getElementById(`v-group-${id}`);
+            const input = group.querySelector('.v-opt-in');
+            const picker = group.querySelector('.variant-img-picker');
+            const list = group.querySelector('.v-options-list');
+            
+            if(!input.value) return;
+            
+            const selectedIdx = picker.dataset.selectedIdx;
+            const imgData = selectedIdx !== undefined ? tempProductImages[selectedIdx] : null;
 
-        function addVariantOption(groupId) {
-            const input = document.getElementById(`variant-option-input-${groupId}`);
-            const value = input.value.trim();
+            const tag = document.createElement('div');
+            tag.dataset.img = imgData || '';
+            tag.style.cssText = 'background:white; border:1px solid #ddd; padding:0.5rem 1rem; border-radius:50px; font-size:0.8rem; display:flex; align-items:center; gap:0.5rem;';
+            tag.innerHTML = `<span>${input.value}</span>${imgData ? '🖼️' : ''} <button onclick="this.parentElement.remove()" style="border:none; background:none; cursor:pointer;">✕</button>`;
+            list.appendChild(tag);
             
-            if (!value) return;
-            
-            const optionsList = document.getElementById(`variant-options-${groupId}`);
-            const optionId = Date.now();
-            
-            const optionTag = document.createElement('div');
-            optionTag.className = 'variant-option-tag';
-            optionTag.id = `variant-option-${groupId}-${optionId}`;
-            optionTag.innerHTML = `
-                <span>${value}</span>
-                <button type="button" onclick="removeVariantOption(${groupId}, ${optionId})">×</button>
-            `;
-            
-            optionsList.appendChild(optionTag);
             input.value = '';
-            
-            // Update image selector
-            updateVariantImageSelector(groupId);
+            picker.querySelectorAll('img').forEach(img => img.classList.remove('selected'));
+            delete picker.dataset.selectedIdx;
         }
 
-        function removeVariantOption(groupId, optionId) {
-            const option = document.getElementById(`variant-option-${groupId}-${optionId}`);
-            if (option) option.remove();
-            updateVariantImageSelector(groupId);
-        }
-
-        function updateVariantImageSelector(groupId) {
-            const optionsList = document.getElementById(`variant-options-${groupId}`);
-            const imageSelector = document.getElementById(`variant-images-${groupId}`);
-            
-            if (!optionsList || !imageSelector || currentProductImages.length === 0) return;
-            
-            const options = [];
-            optionsList.querySelectorAll('.variant-option-tag span').forEach(span => {
-                options.push(span.textContent.trim());
-            });
-            
-            if (options.length === 0) return;
-            
-            let html = `<label>${storeData.language === 'es' ? 'Vincular imágenes a opciones:' : 'Link images to options:'}</label>`;
-            
-            options.forEach((option, idx) => {
-                html += `
-                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem;">
-                        <span style="min-width: 80px; font-size: 0.85rem;">${option}:</span>
-                        <select id="variant-${groupId}-option-${idx}-image" style="flex: 1; padding: 0.5rem;">
-                            <option value="">${storeData.language === 'es' ? 'Ninguna' : 'None'}</option>
-                            ${currentProductImages.map((img, imgIdx) => `
-                                <option value="${imgIdx}">${storeData.language === 'es' ? 'Imagen' : 'Image'} ${imgIdx + 1}</option>
-                            `).join('')}
-                        </select>
-                    </div>
-                `;
-            });
-            
-            imageSelector.innerHTML = html;
-        }
-
-        function getVariantsFromBuilder() {
-            const variants = [];
-            const groups = document.querySelectorAll('.variant-builder');
-            
-            groups.forEach(group => {
-                const groupId = group.id.split('-')[2];
-                const nameInput = document.getElementById(`variant-name-${groupId}`);
-                const name = nameInput ? nameInput.value.trim() : '';
-                
-                if (!name) return;
-                
-                const optionsList = document.getElementById(`variant-options-${groupId}`);
-                const options = [];
-                
-                if (optionsList) {
-                    const optionSpans = optionsList.querySelectorAll('.variant-option-tag span');
-                    optionSpans.forEach((span, idx) => {
-                        const option = span.textContent.trim();
-                        if (option) {
-                            const imageSelect = document.getElementById(`variant-${groupId}-option-${idx}-image`);
-                            const imageIndex = imageSelect ? parseInt(imageSelect.value) : -1;
-                            
-                            options.push({
-                                value: option,
-                                image: imageIndex >= 0 ? currentProductImages[imageIndex] : null
-                            });
-                        }
-                    });
-                }
-                
-                if (options.length > 0) {
-                    variants.push({ name, options });
-                }
-            });
-            
-            return variants;
-        }
-
-        function clearVariantBuilder() {
-            document.getElementById('variantsContainer').innerHTML = '';
-            variantGroupCounter = 0;
-        }
-
-        // Categories
-        function addCategory() {
-            const name = document.getElementById('newCategory').value.trim();
-            if (!name) {
-                showAlert('⚠️ ' + (storeData.language === 'es' ? 'Por favor ingresa un nombre de categoría' : 'Please enter a category name'), 'info');
-                return;
-            }
-            
-            if (storeData.categories.includes(name)) {
-                showAlert('⚠️ ' + (storeData.language === 'es' ? 'Esta categoría ya existe' : 'This category already exists'), 'info');
-                return;
-            }
-            
-            storeData.categories.push(name);
-            saveData();
-            displayCategories();
-            updateCategorySelect();
-            document.getElementById('newCategory').value = '';
-            showAlert('✅ ' + (storeData.language === 'es' ? 'Categoría agregada' : 'Category added'), 'success');
-        }
-
-        function deleteCategory(name) {
-            if (name === 'General') {
-                showAlert('⚠️ ' + (storeData.language === 'es' ? 'No puedes eliminar la categoría General' : 'You cannot delete the General category'), 'info');
-                return;
-            }
-            
-            if (confirm(storeData.language === 'es' ? '¿Eliminar esta categoría? Los productos se moverán a "General"' : 'Delete this category? Products will be moved to "General"')) {
-                storeData.categories = storeData.categories.filter(c => c !== name);
-                storeData.products.forEach(p => {
-                    if (p.category === name) p.category = 'General';
-                });
-                saveData();
-                displayCategories();
-                updateCategorySelect();
-                displayProducts();
-                showAlert('✅ ' + (storeData.language === 'es' ? 'Categoría eliminada' : 'Category deleted'), 'success');
-            }
-        }
-
-        function displayCategories() {
-            const list = document.getElementById('categoriesList');
-            list.innerHTML = storeData.categories.map(cat => `
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--bg); border-radius: 10px; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600;">${cat}</span>
-                    ${cat !== 'General' ? `<button class="btn btn-secondary btn-sm" onclick="deleteCategory('${cat}')">🗑️</button>` : ''}
-                </div>
-            `).join('');
-        }
-
-        function updateCategorySelect() {
-            const select = document.getElementById('productCategory');
-            select.innerHTML = storeData.categories.map(cat => 
-                `<option value="${cat}">${cat}</option>`
-            ).join('');
-        }
-
-        // Products
         function addProduct() {
-            const name = document.getElementById('productName').value.trim();
+            const name = document.getElementById('productName').value;
             const price = parseFloat(document.getElementById('productPrice').value);
-            
-            if (!name || !price) {
-                showAlert('⚠️ ' + (storeData.language === 'es' ? 'Por favor completa nombre y precio' : 'Please complete name and price'), 'info');
-                return;
-            }
-            
-            if (currentProductImages.length === 0) {
-                showAlert('⚠️ ' + (storeData.language === 'es' ? 'Por favor agrega al menos una imagen' : 'Please add at least one image'), 'info');
-                return;
-            }
-            
-            const variants = getVariantsFromBuilder();
-            
-            const product = {
+            if(!name || isNaN(price)) return showAlert('⚠️ Faltan datos', 'info');
+
+            const variants = [];
+            document.querySelectorAll('.variant-builder').forEach(g => {
+                const vName = g.querySelector('.v-name').value;
+                const opts = Array.from(g.querySelectorAll('.v-options-list div')).map(s => ({
+                    text: s.querySelector('span').textContent,
+                    image: s.dataset.img
+                }));
+                if(vName && opts.length) variants.push({ name: vName, options: opts });
+            });
+
+            storeData.products.push({
                 id: Date.now(),
-                name: name,
+                name,
                 category: document.getElementById('productCategory').value,
-                description: document.getElementById('productDescription').value.trim(),
-                price: price,
-                images: [...currentProductImages],
-                variants: variants
-            };
-            
-            storeData.products.push(product);
-            saveData();
-            displayProducts();
-            
-            // Clear form
+                description: document.getElementById('productDescription').value,
+                price,
+                image: tempProductImages[0] || '📦',
+                images: [...tempProductImages],
+                variants
+            });
+            saveData(); updateDisplay(); clearTempImages();
             document.getElementById('productName').value = '';
-            document.getElementById('productDescription').value = '';
             document.getElementById('productPrice').value = '';
-            document.getElementById('productImageFiles').value = '';
-            clearVariantBuilder();
-            currentProductImages = [];
-            document.getElementById('imageGallery').innerHTML = '';
-            
-            showAlert('✅ ' + (storeData.language === 'es' ? 'Producto agregado' : 'Product added'), 'success');
+            document.getElementById('variantsContainer').innerHTML = '';
+            showAlert('✅ Añadido', 'success');
         }
 
-        function deleteProduct(id) {
-            if (confirm(storeData.language === 'es' ? '¿Eliminar este producto?' : 'Delete this product?')) {
-                storeData.products = storeData.products.filter(p => p.id !== id);
-                saveData();
-                displayProducts();
-                showAlert('✅ ' + (storeData.language === 'es' ? 'Producto eliminado' : 'Product deleted'), 'success');
+        function selectVarOption(el, pid, varImg) {
+            el.parentElement.querySelectorAll('.variant-option').forEach(o => o.classList.remove('selected'));
+            el.classList.add('selected');
+            if(varImg) {
+                const mainImg = document.getElementById(`main-img-${pid}`);
+                if(mainImg) mainImg.src = varImg;
             }
         }
 
         function displayProducts() {
-            const t = translations[storeData.language];
+            const display = document.getElementById('productsDisplay');
+            if(!storeData.products.length) return display.innerHTML = '<div style="text-align:center; padding:4rem; color:#999;">Catálogo vacío</div>';
             
-            // Admin list
-            const adminList = document.getElementById('productsList');
-            if (storeData.products.length === 0) {
-                adminList.innerHTML = `<p style="text-align: center; color: var(--text-light); padding: 2rem;">${storeData.language === 'es' ? 'No hay productos todavía. ¡Agrega tu primer producto!' : 'No products yet. Add your first product!'}</p>`;
-            } else {
-                adminList.innerHTML = `
-                    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem;">${storeData.language === 'es' ? 'Productos' : 'Products'} (${storeData.products.length})</h3>
+            const cats = {};
+            storeData.products.forEach(p => { if(!cats[p.category]) cats[p.category] = []; cats[p.category].push(p); });
+
+            display.innerHTML = Object.keys(cats).map(cat => `
+                <section style="margin-bottom:5rem;">
+                    <h2 style="font-family:'Playfair Display'; font-size:2.5rem; text-align:center; margin-bottom:3rem;">${cat}</h2>
                     <div class="products-grid">
-                        ${storeData.products.map(p => `
-                            <div class="product-card">
-                                <div class="product-image-container">
-                                    <div class="product-image">
-                                        <img src="${p.images[0]}" alt="${p.name}">
-                                    </div>
+                        ${cats[cat].map(p => {
+                            const isImg = p.image.startsWith('http') || p.image.startsWith('data:');
+                            return `
+                            <article class="product-card">
+                                <div class="product-image ${!isImg ? 'emoji' : ''}">
+                                    ${isImg ? `<img id="main-img-${p.id}" src="${p.image}">` : p.image}
                                 </div>
                                 <div class="product-content">
-                                    <span class="product-category">${p.category}</span>
+                                    <span class="product-category">${cat}</span>
                                     <h3 class="product-name">${p.name}</h3>
-                                    <p class="product-description">${p.description || (storeData.language === 'es' ? 'Sin descripción' : 'No description')}</p>
-                                    <div class="product-price">€${p.price.toFixed(2)}</div>
-                                    ${p.variants.length > 0 ? `<p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.5rem;">${storeData.language === 'es' ? 'Variantes' : 'Variants'}: ${p.variants.map(v => v.name).join(', ')}</p>` : ''}
-                                    <div class="product-actions">
-                                        <button class="btn btn-secondary btn-sm" onclick="deleteProduct(${p.id})">🗑️ ${storeData.language === 'es' ? 'Eliminar' : 'Delete'}</button>
-                                    </div>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                `;
-            }
-            
-            // Customer display
-            const display = document.getElementById('productsDisplay');
-            if (storeData.products.length === 0) {
-                display.innerHTML = `<p style="text-align: center; color: var(--text-light); padding: 3rem; font-size: 1.2rem;">🛍️ ${storeData.language === 'es' ? 'Pronto habrá productos disponibles' : 'Products coming soon'}</p>`;
-            } else {
-                // Group by category
-                const byCategory = {};
-                storeData.products.forEach(p => {
-                    if (!byCategory[p.category]) byCategory[p.category] = [];
-                    byCategory[p.category].push(p);
-                });
-                
-                display.innerHTML = Object.keys(byCategory).map(category => `
-                    <div style="margin-bottom: 3rem;">
-                        <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1.5rem; color: var(--text);">
-                            ${category}
-                        </h2>
-                        <div class="products-grid">
-                            ${byCategory[category].map(p => {
-                                if (!productQuantities[p.id]) productQuantities[p.id] = 1;
-                                
-                                return `
-                                <div class="product-card">
-                                    <div class="product-image-container">
-                                        <div class="product-image" id="product-image-${p.id}">
-                                            <img src="${p.images[0]}" alt="${p.name}">
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <span class="product-category">${p.category}</span>
-                                        <h3 class="product-name">${p.name}</h3>
-                                        <p class="product-description">${p.description || ''}</p>
-                                        <div class="product-price">€${p.price.toFixed(2)}</div>
-                                        ${p.variants.length > 0 ? p.variants.map(variant => `
-                                            <div class="variant-group">
-                                                <span class="variant-label">${variant.name}:</span>
-                                                <div class="variant-options" id="variants-${p.id}-${variant.name}">
-                                                    ${variant.options.map((option, idx) => `
-                                                        <div class="variant-option ${idx === 0 ? 'selected' : ''}" 
-                                                             onclick="selectVariant(${p.id}, '${variant.name}', ${idx}, this)"
-                                                             data-image="${option.image || ''}">
-                                                            ${option.value}
-                                                        </div>
-                                                    `).join('')}
-                                                </div>
+                                    <p class="product-description">${p.description || ''}</p>
+                                    <div class="product-price">${storeData.currency}${p.price.toFixed(2)}</div>
+                                    ${p.variants.map(v => `
+                                        <div style="margin-bottom:1rem">
+                                            <span style="font-size:0.7rem; font-weight:800; color:#999">${v.name}</span>
+                                            <div class="variant-options">
+                                                ${v.options.map((o, idx) => `
+                                                    <div class="variant-option ${idx === 0 ? 'selected' : ''}" 
+                                                         onclick="selectVarOption(this, ${p.id}, '${o.image}')">${o.text}</div>`).join('')}
                                             </div>
-                                        `).join('') : ''}
-                                        
-                                        <div class="quantity-selector">
-                                            <span>${t.quantity}</span>
-                                            <div class="quantity-selector-controls">
-                                                <button class="quantity-selector-btn" onclick="changeProductQuantity(${p.id}, -1)">−</button>
-                                                <span class="quantity-selector-value" id="qty-${p.id}">${productQuantities[p.id]}</span>
-                                                <button class="quantity-selector-btn" onclick="changeProductQuantity(${p.id}, 1)">+</button>
-                                            </div>
-                                        </div>
-                                        
-                                        <button class="btn btn-primary" onclick="addToCart(${p.id})" style="width: 100%; margin-top: 1rem;">
-                                            🛒 ${t.addToCart}
-                                        </button>
+                                        </div>`).join('')}
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn" onclick="changeQty(${p.id}, -1)">−</button>
+                                        <span id="qty-${p.id}" style="font-weight:800">1</span>
+                                        <button class="quantity-btn" onclick="changeQty(${p.id}, 1)">+</button>
                                     </div>
+                                    <button class="btn btn-primary" onclick="addToCart(${p.id})" style="width:100%">${storeData.addToCartText}</button>
+                                    ${sessionStorage.getItem('adminAuthenticated') === 'true' ? `<button class="btn btn-secondary" onclick="deleteProduct(${p.id})" style="margin-top:1rem; width:100%; color:red;">Eliminar</button>` : ''}
                                 </div>
-                                `;
-                            }).join('')}
-                        </div>
+                            </article>`;
+                        }).join('')}
                     </div>
-                `).join('');
-            }
+                </section>
+            `).join('');
         }
 
-        function selectVariant(productId, variantName, optionIdx, element) {
-            // Deselect all options in this variant group
-            const container = element.parentElement;
-            container.querySelectorAll('.variant-option').forEach(opt => {
-                opt.classList.remove('selected');
+        function loadData() {
+            try {
+                const saved = localStorage.getItem('storeData');
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    storeData = { ...storeData, ...parsed };
+                    document.getElementById('storeName').value = storeData.name;
+                    document.getElementById('whatsappNumber').value = storeData.whatsapp;
+                    document.getElementById('storeLogo').value = storeData.logo;
+                    document.getElementById('primaryColor').value = storeData.primaryColor;
+                    document.getElementById('currencySymbol').value = storeData.currency;
+                    document.getElementById('addToCartText').value = storeData.addToCartText;
+                }
+            } catch (e) {}
+        }
+
+        function saveData() { localStorage.setItem('storeData', JSON.stringify(storeData)); }
+        function updateColors() { document.documentElement.style.setProperty('--primary', storeData.primaryColor); }
+        function updateDisplay() {
+            document.getElementById('storeNameDisplay').textContent = storeData.name;
+            document.getElementById('logoDisplay').textContent = storeData.logo;
+            updateColors(); displayProducts(); displayCategories(); updateCategorySelect(); updateCartBadge();
+        }
+
+        function changeQty(pid, val) {
+            const el = document.getElementById(`qty-${pid}`);
+            let q = parseInt(el.textContent) + val;
+            if(q < 1) q = 1;
+            el.textContent = q;
+        }
+
+        function addToCart(pid) {
+            const p = storeData.products.find(x => x.id === pid);
+            const qty = parseInt(document.getElementById(`qty-${pid}`).textContent);
+            const vars = {};
+            document.querySelectorAll(`.product-card`).forEach(card => {
+                if(card.querySelector(`[onclick*="addToCart(${pid})"]`)) {
+                    card.querySelectorAll('.variant-options').forEach((vo, idx) => {
+                        vars[p.variants[idx].name] = vo.querySelector('.selected').textContent;
+                    });
+                }
             });
-            // Select clicked option
-            element.classList.add('selected');
-            
-            // Change product image if variant has linked image
-            const imageData = element.getAttribute('data-image');
-            if (imageData && imageData !== '') {
-                const productImageContainer = document.getElementById(`product-image-${productId}`);
-                if (productImageContainer) {
-                    productImageContainer.innerHTML = `<img src="${imageData}" alt="Variant image">`;
-                }
-            } else {
-                // Reset to main image
-                const product = storeData.products.find(p => p.id === productId);
-                if (product) {
-                    const productImageContainer = document.getElementById(`product-image-${productId}`);
-                    if (productImageContainer) {
-                        productImageContainer.innerHTML = `<img src="${product.images[0]}" alt="${product.name}">`;
-                    }
-                }
-            }
+            storeData.cart.push({ productId: pid, variants: vars, quantity: qty });
+            updateCartBadge(); showAlert('🛒 Añadido', 'success');
         }
 
-        function changeProductQuantity(productId, change) {
-            if (!productQuantities[productId]) productQuantities[productId] = 1;
-            
-            productQuantities[productId] += change;
-            if (productQuantities[productId] < 1) productQuantities[productId] = 1;
-            
-            const qtyElement = document.getElementById(`qty-${productId}`);
-            if (qtyElement) {
-                qtyElement.textContent = productQuantities[productId];
-            }
-        }
+        function updateCartBadge() { document.getElementById('cartBadge').textContent = storeData.cart.reduce((s, i) => s + i.quantity, 0); }
+        function openCart() { document.getElementById('cartModal').classList.add('active'); renderCart(); }
+        function closeCart() { document.getElementById('cartModal').classList.remove('active'); }
 
-        // Cart
-        function addToCart(productId) {
-            const product = storeData.products.find(p => p.id === productId);
-            if (!product) return;
-            
-            let selectedVariants = {};
-            
-            // Get selected variants for this product
-            if (product.variants.length > 0) {
-                product.variants.forEach(variant => {
-                    const container = document.getElementById(`variants-${productId}-${variant.name}`);
-                    if (container) {
-                        const selected = container.querySelector('.variant-option.selected');
-                        if (selected) {
-                            selectedVariants[variant.name] = selected.textContent.trim();
-                        }
-                    }
-                });
-            }
-            
-            const variantKey = JSON.stringify(selectedVariants);
-            const quantity = productQuantities[productId] || 1;
-            
-            // Check if already in cart
-            const existingIndex = storeData.cart.findIndex(item => 
-                item.productId === productId && JSON.stringify(item.variants) === variantKey
-            );
-            
-            if (existingIndex >= 0) {
-                storeData.cart[existingIndex].quantity += quantity;
-            } else {
-                storeData.cart.push({
-                    productId: productId,
-                    variants: selectedVariants,
-                    quantity: quantity
-                });
-            }
-            
-            // Reset quantity to 1
-            productQuantities[productId] = 1;
-            const qtyElement = document.getElementById(`qty-${productId}`);
-            if (qtyElement) qtyElement.textContent = '1';
-            
-            saveData();
-            updateCartBadge();
-            showAlert(`✅ ${quantity} ${storeData.language === 'es' ? 'producto(s) agregado(s) al carrito' : 'product(s) added to cart'}`, 'success');
-        }
-
-        function updateCartBadge() {
-            const total = storeData.cart.reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById('cartBadge').textContent = total;
-        }
-
-        function openCart() {
-            displayCart();
-            document.getElementById('cartModal').classList.add('active');
-        }
-
-        function closeCart() {
-            document.getElementById('cartModal').classList.remove('active');
-        }
-
-        function displayCart() {
-            const t = translations[storeData.language];
-            const container = document.getElementById('cartItems');
-            const totalSection = document.getElementById('cartTotal');
-            const customerForm = document.getElementById('customerForm');
-            
-            if (storeData.cart.length === 0) {
-                container.innerHTML = `
-                    <div class="empty-cart">
-                        <div class="empty-cart-icon">🛒</div>
-                        <h3>${t.emptyCart}</h3>
-                        <p>${t.emptyCartDesc}</p>
-                    </div>
-                `;
-                totalSection.style.display = 'none';
-                customerForm.style.display = 'none';
+        function renderCart() {
+            const cont = document.getElementById('cartItems');
+            if(!storeData.cart.length) {
+                cont.innerHTML = '<p style="text-align:center">Carrito vacío</p>';
+                document.getElementById('cartTotal').classList.add('hidden');
+                document.getElementById('customerForm').classList.add('hidden');
                 return;
             }
-            
-            totalSection.style.display = 'block';
-            customerForm.style.display = 'block';
-            
-            container.innerHTML = storeData.cart.map(item => {
-                const product = storeData.products.find(p => p.id === item.productId);
-                if (!product) return '';
-                
-                const variantsDisplay = Object.keys(item.variants).length > 0 
-                    ? Object.entries(item.variants).map(([key, value]) => `${key}: ${value}`).join(' | ')
-                    : '';
-                
+            document.getElementById('cartTotal').classList.remove('hidden');
+            document.getElementById('customerForm').classList.remove('hidden');
+            let total = 0;
+            cont.innerHTML = storeData.cart.map((item, idx) => {
+                const p = storeData.products.find(x => x.id === item.productId);
+                total += p.price * item.quantity;
                 return `
-                    <div class="cart-item">
-                        <div class="cart-item-image">
-                            <img src="${product.images[0]}" alt="${product.name}">
-                        </div>
-                        <div class="cart-item-info">
-                            <div class="cart-item-name">${product.name}</div>
-                            ${variantsDisplay ? `<div class="cart-item-variant">${variantsDisplay}</div>` : ''}
-                            <div class="cart-item-controls">
-                                <div class="quantity-control">
-                                    <button class="quantity-btn" onclick="updateQuantity(${item.productId}, '${JSON.stringify(item.variants).replace(/'/g, "\\'")}', -1)">-</button>
-                                    <span class="quantity">${item.quantity}</span>
-                                    <button class="quantity-btn" onclick="updateQuantity(${item.productId}, '${JSON.stringify(item.variants).replace(/'/g, "\\'")}', 1)">+</button>
-                                </div>
-                                <div class="cart-item-price">€${(product.price * item.quantity).toFixed(2)}</div>
-                                <button class="btn btn-secondary btn-icon btn-sm" onclick="removeFromCart(${item.productId}, '${JSON.stringify(item.variants).replace(/'/g, "\\'")}')">🗑️</button>
-                            </div>
-                        </div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:1rem; border-bottom:1px solid #eee; padding-bottom:0.5rem">
+                    <div>
+                        <p><strong>${p.name}</strong> x${item.quantity}</p>
+                        <p style="font-size:0.7rem">${Object.entries(item.variants).map(([k,v])=>`${k}:${v}`).join(', ')}</p>
                     </div>
-                `;
+                    <p>${storeData.currency}${(p.price * item.quantity).toFixed(2)} <button onclick="removeFromCart(${idx})" style="color:red; background:none; border:none; cursor:pointer">✕</button></p>
+                </div>`;
             }).join('');
-            
-            updateCartTotal();
+            document.getElementById('total').textContent = storeData.currency + total.toFixed(2);
         }
 
-        function updateQuantity(productId, variantsJson, change) {
-            const variants = JSON.parse(variantsJson);
-            const variantKey = JSON.stringify(variants);
-            const item = storeData.cart.find(i => i.productId === productId && JSON.stringify(i.variants) === variantKey);
-            if (!item) return;
-            
-            item.quantity += change;
-            
-            if (item.quantity <= 0) {
-                removeFromCart(productId, variantsJson);
-                return;
-            }
-            
-            saveData();
-            displayCart();
-            updateCartBadge();
-        }
+        function removeFromCart(idx) { storeData.cart.splice(idx,1); renderCart(); updateCartBadge(); }
 
-        function removeFromCart(productId, variantsJson) {
-            const variants = JSON.parse(variantsJson);
-            const variantKey = JSON.stringify(variants);
-            storeData.cart = storeData.cart.filter(i => 
-                !(i.productId === productId && JSON.stringify(i.variants) === variantKey)
-            );
-            saveData();
-            displayCart();
-            updateCartBadge();
-        }
-
-        function updateCartTotal() {
-            let subtotal = 0;
-            
-            storeData.cart.forEach(item => {
-                const product = storeData.products.find(p => p.id === item.productId);
-                if (product) {
-                    subtotal += product.price * item.quantity;
-                }
-            });
-            
-            let discount = 0;
-            let total = subtotal;
-            
-            if (storeData.appliedCoupon) {
-                const coupon = storeData.coupons.find(c => c.code === storeData.appliedCoupon);
-                if (coupon) {
-                    if (coupon.type === 'percentage') {
-                        discount = subtotal * (coupon.value / 100);
-                    } else {
-                        discount = coupon.value;
-                    }
-                    total = Math.max(0, subtotal - discount);
-                    document.getElementById('discountRow').style.display = 'flex';
-                    document.getElementById('discount').textContent = `-€${discount.toFixed(2)}`;
-                }
-            } else {
-                document.getElementById('discountRow').style.display = 'none';
-            }
-            
-            document.getElementById('subtotal').textContent = `€${subtotal.toFixed(2)}`;
-            document.getElementById('total').textContent = `€${total.toFixed(2)}`;
-        }
-
-        // Coupons
-        function addCoupon() {
-            const code = document.getElementById('couponCode').value.trim().toUpperCase();
-            const type = document.getElementById('couponType').value;
-            const value = parseFloat(document.getElementById('couponValue').value);
-            
-            if (!code || !value) {
-                showAlert('⚠️ ' + (storeData.language === 'es' ? 'Por favor completa todos los campos' : 'Please complete all fields'), 'info');
-                return;
-            }
-            
-            if (storeData.coupons.find(c => c.code === code)) {
-                showAlert('⚠️ ' + (storeData.language === 'es' ? 'Este código ya existe' : 'This code already exists'), 'info');
-                return;
-            }
-            
-            storeData.coupons.push({ code, type, value });
-            saveData();
-            displayCoupons();
-            
-            document.getElementById('couponCode').value = '';
-            document.getElementById('couponValue').value = '';
-            
-            showAlert('✅ ' + (storeData.language === 'es' ? 'Cupón creado' : 'Coupon created'), 'success');
-        }
-
-        function deleteCoupon(code) {
-            if (confirm(storeData.language === 'es' ? '¿Eliminar este cupón?' : 'Delete this coupon?')) {
-                storeData.coupons = storeData.coupons.filter(c => c.code !== code);
-                if (storeData.appliedCoupon === code) {
-                    storeData.appliedCoupon = null;
-                }
-                saveData();
-                displayCoupons();
-                updateCartTotal();
-                showAlert('✅ ' + (storeData.language === 'es' ? 'Cupón eliminado' : 'Coupon deleted'), 'success');
-            }
-        }
-
-        function displayCoupons() {
-            const list = document.getElementById('couponsList');
-            if (storeData.coupons.length === 0) {
-                list.innerHTML = `<p style="text-align: center; color: var(--text-light); padding: 2rem;">${storeData.language === 'es' ? 'No hay cupones creados' : 'No coupons created'}</p>`;
-            } else {
-                list.innerHTML = `
-                    <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">${storeData.language === 'es' ? 'Cupones Activos' : 'Active Coupons'}</h3>
-                    ${storeData.coupons.map(c => `
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: var(--bg); border-radius: 10px; margin-bottom: 0.5rem; border: 2px solid var(--primary);">
-                            <div>
-                                <strong style="font-size: 1.1rem; color: var(--primary);">${c.code}</strong>
-                                <p style="color: var(--text-light); font-size: 0.9rem;">
-                                    ${c.type === 'percentage' ? `${c.value}% ${storeData.language === 'es' ? 'de descuento' : 'discount'}` : `€${c.value.toFixed(2)} ${storeData.language === 'es' ? 'de descuento' : 'discount'}`}
-                                </p>
-                            </div>
-                            <button class="btn btn-secondary btn-sm" onclick="deleteCoupon('${c.code}')">🗑️</button>
-                        </div>
-                    `).join('')}
-                `;
-            }
-        }
-
-        function applyCoupon() {
-            const code = document.getElementById('couponInput').value.trim().toUpperCase();
-            if (!code) return;
-            
-            const coupon = storeData.coupons.find(c => c.code === code);
-            if (!coupon) {
-                showAlert('⚠️ ' + (storeData.language === 'es' ? 'Cupón no válido' : 'Invalid coupon'), 'info');
-                return;
-            }
-            
-            storeData.appliedCoupon = code;
-            saveData();
-            updateCartTotal();
-            showAlert('✅ ' + (storeData.language === 'es' ? 'Cupón aplicado' : 'Coupon applied'), 'success');
-        }
-
-        // WhatsApp
         function sendWhatsApp() {
-            if (!storeData.whatsapp) {
-                showAlert('⚠️ ' + (storeData.language === 'es' ? 'El dueño no ha configurado WhatsApp' : 'Owner has not configured WhatsApp'), 'info');
-                return;
-            }
-            
-            if (storeData.cart.length === 0) return;
-            
-            // Get customer info
-            const customerName = document.getElementById('customerName').value.trim();
-            const customerPhone = document.getElementById('customerPhone').value.trim();
-            const customerAddress = document.getElementById('customerAddress').value.trim();
-            const customerNotes = document.getElementById('customerNotes').value.trim();
-            
-            if (!customerName || !customerPhone || !customerAddress) {
-                showAlert('⚠️ ' + (storeData.language === 'es' ? 'Por favor completa tu nombre, teléfono y dirección' : 'Please complete your name, phone and address'), 'info');
-                return;
-            }
-            
-            // Build message
-            const isSpanish = storeData.language === 'es';
-            let message = `📦 *${isSpanish ? 'NUEVO PEDIDO' : 'NEW ORDER'}*\n`;
-            message += `🏪 *${isSpanish ? 'TIENDA' : 'STORE'}:* ${storeData.name}\n`;
-            message += `👤 *${isSpanish ? 'CLIENTE' : 'CUSTOMER'}:* ${customerName}\n`;
-            message += `📞 *${isSpanish ? 'TELÉFONO' : 'PHONE'}:* ${customerPhone}\n`;
-            message += `📍 *${isSpanish ? 'DIRECCIÓN' : 'ADDRESS'}:* ${customerAddress}\n`;
-            message += `------------------\n`;
-            message += `🛍️ *${isSpanish ? 'PEDIDO' : 'ORDER'}:*\n`;
-            
-            let subtotal = 0;
-            storeData.cart.forEach(item => {
-                const product = storeData.products.find(p => p.id === item.productId);
-                if (product) {
-                    const itemTotal = product.price * item.quantity;
-                    subtotal += itemTotal;
-                    
-                    // Format variants
-                    let variantsText = '';
-                    if (Object.keys(item.variants).length > 0) {
-                        variantsText = ' [' + Object.entries(item.variants)
-                            .map(([key, value]) => `${key}: ${value}`)
-                            .join(', ') + ']';
-                    }
-                    
-                    message += `* ${product.name} x${item.quantity}${variantsText} (€${itemTotal.toFixed(2)})\n`;
-                }
+            const name = document.getElementById('customerName').value;
+            const addr = document.getElementById('customerAddress').value;
+            if(!name || !addr) return showAlert('Faltan datos de envío', 'info');
+            let msg = `🛍️ *PEDIDO: ${storeData.name}*\nCliente: ${name}\nDirección: ${addr}\n\n`;
+            storeData.cart.forEach(i => {
+                const p = storeData.products.find(x => x.id === i.productId);
+                msg += `• ${p.name} (${Object.values(i.variants).join('/')}) x${i.quantity}\n`;
             });
-            
-            if (customerNotes) {
-                message += `📝 *${isSpanish ? 'NOTAS' : 'NOTES'}:* ${customerNotes}\n`;
-            }
-            
-            let discount = 0;
-            if (storeData.appliedCoupon) {
-                const coupon = storeData.coupons.find(c => c.code === storeData.appliedCoupon);
-                if (coupon) {
-                    if (coupon.type === 'percentage') {
-                        discount = subtotal * (coupon.value / 100);
-                    } else {
-                        discount = coupon.value;
-                    }
-                    message += `🎁 *${isSpanish ? 'CUPÓN' : 'COUPON'}:* ${storeData.appliedCoupon} (-€${discount.toFixed(2)})\n`;
-                }
-            }
-            
-            const total = Math.max(0, subtotal - discount);
-            message += `💰 *TOTAL:* €${total.toFixed(2)}\n`;
-            message += `------------------\n`;
-            message += `✅ ${isSpanish ? 'Confirma recepción y envía enlace de pago.' : 'Confirm receipt and send payment link.'}`;
-            
-            const whatsappUrl = `https://wa.me/${storeData.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
+            msg += `\n*Total: ${document.getElementById('total').textContent}*`;
+            window.open(`https://wa.me/${storeData.whatsapp.replace(/\+/g,'')}?text=${encodeURIComponent(msg)}`);
         }
 
-        // Share
+        async function hashPassword(p) {
+            const b = new TextEncoder().encode(p);
+            const h = await crypto.subtle.digest('SHA-256', b);
+            return Array.from(new Uint8Array(h)).map(x => x.toString(16).padStart(2, '0')).join('');
+        }
+
+        async function attemptLogin() {
+            const h = await hashPassword(document.getElementById('loginPassword').value);
+            if(h === storeData.auth.passwordHash) {
+                sessionStorage.setItem('adminAuthenticated', 'true');
+                location.reload();
+            } else { document.getElementById('loginError').textContent = 'Incorrecto'; document.getElementById('loginError').classList.remove('hidden'); }
+        }
+
+        async function setupPassword() {
+            const p1 = document.getElementById('setupPassword1').value;
+            if(p1.length < 6) return showAlert('Mínimo 6 caracteres', 'info');
+            storeData.auth.passwordHash = await hashPassword(p1);
+            saveData(); sessionStorage.setItem('adminAuthenticated', 'true');
+            location.reload();
+        }
+
+        function checkAdminAccess() {
+            if(!storeData.auth.passwordHash) showModal('setup');
+            else if(sessionStorage.getItem('adminAuthenticated') !== 'true') showModal('login');
+            else document.getElementById('adminPanel').classList.remove('hidden');
+        }
+
+        function showModal(t) {
+            document.getElementById('loginModal').classList.remove('hidden');
+            document.getElementById('loginForm').classList.toggle('hidden', t === 'setup');
+            document.getElementById('setupForm').classList.toggle('hidden', t === 'login');
+        }
+
+        function saveDesign() {
+            storeData.name = document.getElementById('storeName').value;
+            storeData.whatsapp = document.getElementById('whatsappNumber').value;
+            storeData.logo = document.getElementById('storeLogo').value;
+            storeData.primaryColor = document.getElementById('primaryColor').value;
+            storeData.currency = document.getElementById('currencySymbol').value;
+            storeData.addToCartText = document.getElementById('addToCartText').value;
+            saveData(); updateDisplay(); showAlert('✅ Guardado', 'success');
+        }
+
+        function initializeTabs() {
+            document.querySelectorAll('.tab').forEach(t => {
+                t.addEventListener('click', () => {
+                    document.querySelectorAll('.tab, .tab-content').forEach(el => el.classList.remove('active'));
+                    t.classList.add('active');
+                    document.getElementById(t.dataset.tab).classList.add('active');
+                });
+            });
+        }
+
+        function addCategory() {
+            const n = document.getElementById('newCategory').value;
+            if(n && !storeData.categories.includes(n)) { storeData.categories.push(n); saveData(); updateDisplay(); }
+        }
+
+        function displayCategories() {
+            document.getElementById('categoriesList').innerHTML = storeData.categories.map(c => `<div>${c}</div>`).join('');
+        }
+
+        function updateCategorySelect() {
+            document.getElementById('productCategory').innerHTML = storeData.categories.map(c => `<option value="${c}">${c}</option>`).join('');
+        }
+
+        function showAlert(m, t) {
+            const a = document.createElement('div'); a.className = 'alert'; a.textContent = m;
+            document.body.appendChild(a); setTimeout(() => a.remove(), 3000);
+        }
+
         function generateShareLink() {
-            const baseUrl = window.location.origin + window.location.pathname;
-            const shareUrl = baseUrl + '?shop=customer';
-            document.getElementById('shareLink').value = shareUrl;
-            
-            // Generate QR
-            const qrContainer = document.getElementById('qrcode');
-            qrContainer.innerHTML = '';
-            new QRCode(qrContainer, {
-                text: shareUrl,
-                width: 200,
-                height: 200,
-                colorDark: storeData.primaryColor,
-                colorLight: '#ffffff',
-            });
-        }
-
-        function copyLink() {
-            const input = document.getElementById('shareLink');
-            input.select();
-            document.execCommand('copy');
-            showAlert('✅ ' + (storeData.language === 'es' ? 'Enlace copiado al portapapeles' : 'Link copied to clipboard'), 'success');
+            const url = window.location.origin + window.location.pathname + '?shop=customer';
+            document.getElementById('shareLink').value = url;
+            new QRCode(document.getElementById('qrcode'), { text: url, width: 250, height: 250 });
         }
 
         function downloadQR() {
-            const canvas = document.querySelector('#qrcode canvas');
-            if (canvas) {
-                const url = canvas.toDataURL('image/png');
+            const qrCanvas = document.querySelector('#qrcode canvas');
+            if (qrCanvas) {
                 const link = document.createElement('a');
-                link.download = `qr-${storeData.name}.png`;
-                link.href = url;
+                link.download = 'qr-mi-tienda.png';
+                link.href = qrCanvas.toDataURL();
                 link.click();
+            } else {
+                showAlert('⚠️ Primero genera el enlace', 'info');
             }
         }
 
-        // Data Management
+        function copyLink() {
+            document.getElementById('shareLink').select();
+            document.execCommand('copy');
+            showAlert('📋 Copiado', 'success');
+        }
+
         function exportData() {
-            const dataStr = JSON.stringify(storeData, null, 2);
-            const dataBlob = new Blob([dataStr], { type: 'application/json' });
-            const url = URL.createObjectURL(dataBlob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `tienda-backup-${Date.now()}.json`;
-            link.click();
-            showAlert('✅ ' + (storeData.language === 'es' ? 'Datos exportados' : 'Data exported'), 'success');
+            const blob = new Blob([JSON.stringify(storeData)], {type:'application/json'});
+            const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'tienda.json'; a.click();
         }
 
         function importData() {
-            const file = document.getElementById('importFile').files[0];
-            if (!file) {
-                showAlert('⚠️ ' + (storeData.language === 'es' ? 'Selecciona un archivo' : 'Select a file'), 'info');
-                return;
-            }
-            
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const imported = JSON.parse(e.target.result);
-                    storeData = imported;
-                    saveData();
-                    loadData();
-                    updateDisplay();
-                    showAlert('✅ ' + (storeData.language === 'es' ? 'Datos importados correctamente' : 'Data imported successfully'), 'success');
-                    document.getElementById('importFile').value = '';
-                    location.reload();
-                } catch (error) {
-                    showAlert('⚠️ ' + (storeData.language === 'es' ? 'Error al importar: archivo no válido' : 'Import error: invalid file'), 'info');
-                }
-            };
-            reader.readAsText(file);
+            const f = document.getElementById('importFile').files[0];
+            const r = new FileReader();
+            r.onload = (e) => { storeData = JSON.parse(e.target.result); saveData(); location.reload(); };
+            r.readAsText(f);
         }
 
-        function resetData() {
-            const confirmText = storeData.language === 'es' 
-                ? '⚠️ ¿Estás seguro? Esto eliminará TODOS los datos de la tienda. Esta acción no se puede deshacer.'
-                : '⚠️ Are you sure? This will delete ALL store data. This action cannot be undone.';
-            const finalText = storeData.language === 'es'
-                ? '⚠️ ÚLTIMA ADVERTENCIA: Se perderán todos los productos, categorías, cupones y configuración. ¿Continuar?'
-                : '⚠️ FINAL WARNING: All products, categories, coupons and settings will be lost. Continue?';
-            
-            if (confirm(confirmText)) {
-                if (confirm(finalText)) {
-                    localStorage.clear();
-                    location.reload();
-                }
-            }
-        }
+        function resetData() { if(confirm('¿Borrar todo?')) { localStorage.clear(); location.reload(); } }
 
-        // UI Helpers
-        function showAlert(message, type) {
-            const alert = document.createElement('div');
-            alert.className = `alert alert-${type}`;
-            alert.innerHTML = `<span>${message}</span>`;
-            
-            const container = document.querySelector('.container');
-            container.insertBefore(alert, container.firstChild);
-            
-            setTimeout(() => {
-                alert.style.animation = 'fadeOut 0.3s ease';
-                setTimeout(() => alert.remove(), 300);
-            }, 3000);
-        }
-
-        // Event Listeners
+        window.addEventListener('load', init);
         document.getElementById('cartBtn').addEventListener('click', openCart);
         document.getElementById('adminToggle').addEventListener('click', () => {
-            const panel = document.getElementById('adminPanel');
-            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
-        });
-
-        // Close modal on background click
-        document.getElementById('cartModal').addEventListener('click', (e) => {
-            if (e.target.id === 'cartModal') closeCart();
-        });
-
-        // Uppercase coupon input
-        document.getElementById('couponInput').addEventListener('input', (e) => {
-            e.target.value = e.target.value.toUpperCase();
-        });
-        document.getElementById('couponCode').addEventListener('input', (e) => {
-            e.target.value = e.target.value.toUpperCase();
+            document.getElementById('adminPanel').classList.toggle('hidden');
         });
     </script>
 </body>
